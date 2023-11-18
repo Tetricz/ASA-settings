@@ -8,6 +8,8 @@ rem ^ Location to directory that the Ark Server will be installed in ^
 set Executable_Dir=C:\ArkSAServer\server\ShooterGame\Binaries\Win64
 rem ^ Location to directory containing the following executable ^
 set Server_Executable=ArkAscendedServer.exe
+rem ^ Location of git settings ^
+set g_dir=S:\Projects\ASA-settings
 rem ________________
 rem BEGIN BATCH CODE
 rem Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯
@@ -24,6 +26,18 @@ if ERRORLEVEL=0 goto close
 echo Checking For Update
 start "" /b /w /high "%SteamCMD_Dir%\steamcmd.exe" +login anonymous +force_install_dir "%Server_Dir%" +app_update 2430930 validate +quit
 echo.
+echo %g_dir%
+echo Pulling from git
+echo --- Working on "%g_dir%"
+pushd "%g_dir%"
+    if NOT EXIST ".git\" (
+        echo   x: \"%cd%\%%i\" is not a git repository, continue next directory.
+    ) else (
+        git pull
+    )
+popd
+echo Copying config files
+xcopy /y /q /e /i %g_dir%\*.ini %Server_Dir%\ShooterGame\Saved\Config\WindowsServer\
 echo If No Errors Exist, The Server Has Been Started!
 echo.
 echo Waiting For Crash...
