@@ -9,7 +9,7 @@ set Executable_Dir=C:\ArkSAServer\server\ShooterGame\Binaries\Win64
 rem ^ Location to directory containing the following executable ^
 set Server_Executable=ArkAscendedServer.exe
 rem ^ Location of git settings ^
-set g_dir=S:\Projects\ASA-settings
+set g_dir=C:\ASA-settings
 rem ________________
 rem BEGIN BATCH CODE
 rem Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯
