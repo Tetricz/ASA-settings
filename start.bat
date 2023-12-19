@@ -42,7 +42,7 @@ echo If No Errors Exist, The Server Has Been Started!
 echo.
 echo Waiting For Crash...
 cd "%Executable_Dir%"
-start "" /w /high "%Server_Executable%" start ArkAscendedServer TheIsland_WP?NA-PVP-Smalltribes-4p-2xT-No Offline Raid?Listen -NoBattlEye -mods=927083 -crossplay exit &:: Using "-log" Will Prevent Automatic Crash Detection
+start "" /w /high "%Server_Executable%" start ArkAscendedServer TheIsland_WP?NA-PVP-Smalltribes-4p-2xT-No Offline Raid?Listen -NoBattlEye -crossplay exit &:: Using "-log" Will Prevent Automatic Crash Detection
 echo Crash Detected!
 echo.
 echo CTRL+C To Freeze Before Restarting
